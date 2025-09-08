@@ -1,6 +1,6 @@
 {
   "name": "TubeSync",
-  "description": "TubeSync Chrome Extension, with WebSocket",
+  "description": "TubeSync Chrome Extension",
   "version": "1.0",
   "manifest_version": 3,
   "minimum_chrome_version": "116",
@@ -10,5 +10,11 @@
   "background": {
     "service_worker": "service-worker.js",
     "type": "module"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/watch*"],
+      "js": ["content-script.js"]
+    }
+  ]
 }
