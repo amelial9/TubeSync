@@ -1,3 +1,10 @@
+chrome.notifications.onButtonClicked.addListener(async () => {
+  const item = await chrome.storage.sync.get(['minutes']);
+  chrome.action.setBadgeText({ text: 'ON' });
+  chrome.alarms.create({ delayInMinutes: item.minutes });
+});
+
+
 const TEN_SECONDS_MS = 10 * 1000;
 let webSocket = null;
 
