@@ -17,5 +17,13 @@
       "matches": ["*://www.youtube.com/watch*"],
       "js": ["content-script.js"]
     }
+  ],
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://localhost:3000/*",
+    "https://www.youtube.com/*"
   ]
 }
