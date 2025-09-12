@@ -11,10 +11,10 @@ async def handle_connection(websocket):
             try:
                 data = json.loads(message)
                 print("[TubeSync] Received playback data:")
-                print(f"  ▶️ Title: {data.get('title')}")
-                print(f"  🎙 Author: {data.get('author')}")
-                print(f"  ⏱ Time: {data.get('time')} / {data.get('duration')} sec")
-                print(f"  ⏯ Playing: {'Yes' if data.get('playing') else 'Paused'}\n")
+                print(f"Title: {data.get('title')}")
+                print(f"Author: {data.get('author')}")
+                print(f"Time: {data.get('time')} / {data.get('duration')} sec")
+                print(f"Playing: {'Yes' if data.get('playing') else 'Paused'}\n")
             except json.JSONDecodeError:
                 print("⚠️ Received invalid JSON:", message)
     except websockets.exceptions.ConnectionClosed:
