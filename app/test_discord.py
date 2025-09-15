@@ -2,6 +2,7 @@ from pypresence import Presence
 import time
 import os
 from dotenv import load_dotenv
+
 load_dotenv()
 
 client_id = os.getenv("DISCORD_CLIENT_ID")
@@ -10,7 +11,6 @@ RPC.connect()
 
 print("Testing Discord Rich Presence")
 
-# Test 1: Basic presence
 RPC.update(
     state="vibing 🪩",
     details="Amelia testing Rich Presence",
@@ -19,4 +19,4 @@ RPC.update(
 
 time.sleep(10)
 RPC.clear()
-print("✅ Presence cleared!")
+print("✅ Presence cleared")
